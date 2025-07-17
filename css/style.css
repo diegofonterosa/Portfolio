@@ -109,6 +109,38 @@ h1, h2, h3 {
     transition: 0.3s;
 }
 
+.hero {
+    background: linear-gradient(135deg, #667eea, 0%, #764ba2 100%);
+    color: #f8f9fa;
+    padding: 120px 0 80px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    opacity: 1;
+}
+
+.hero-description {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 40 px;
+    line-height: 1.5;
+}
 
 /*Política de cookies*/
 .cookie-popup{
@@ -168,4 +200,34 @@ h1, h2, h3 {
 
 #rejectCookies:hover {
     background-color: #545b62;
+}
+
+@media (max-width: 768px) {
+    .hamburguer {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: #f8f9fa;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        height: calc(100vh - 60px);
+        justify-content: flex-start;
+        padding-top: 50px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
 }
