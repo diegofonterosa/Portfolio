@@ -8,7 +8,7 @@
 
 Portfolio web personal desarrollado con **HTML5, CSS3 y JavaScript vanilla**. Diseño responsive con menú hamburguesa, scroll suave, política de cookies y fuentes locales. Presenta experiencia profesional, proyectos técnicos y formulario de contacto.
 
-🌐 **Demo en vivo:** [diegofonterosa.com](#)
+🌐 **Demo en vivo:** [portfoliodiegofonterosa.netlify.app](https://portfoliodiegofonterosa.netlify.app/)
 
 ---
 
