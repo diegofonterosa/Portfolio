@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +16,17 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="hamburguer" id="hamburguer">
+            <div class="hamburguer" id="hamburguer" role="button" aria-label="Menú" aria-expanded="false" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#resume">Currículum</a></li>
-                <li><a href="#contact">Contacto</a></li>
+            <ul class="nav-menu" id="nav-menu" role="menu">
+                <li role="none"><a role="menuitem" href="#home">Inicio</a></li>
+                <li role="none"><a role="menuitem" href="#about">Sobre mí</a></li>
+                <li role="none"><a role="menuitem" href="#projects">Proyectos</a></li>
+                <li role="none"><a role="menuitem" href="#resume">Currículum</a></li>
+                <li role="none"><a role="menuitem" href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -45,7 +45,7 @@
             <h2 class="section-title">Sobre mí</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=600&auto=format&fit=crop&q=60" alt="Workspace tecnológico">
+                    <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=600&auto=format&fit=crop&q=60" alt="Workspace tecnológico" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h3>Diego Pérez Fonterosa</h3>
@@ -88,7 +88,7 @@
                 <!-- PROYECTO 1: Cuestionario ASIR -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=60" alt="Sistema de Cuestionarios ASIR">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=60" alt="Sistema de Cuestionarios ASIR" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Sistema de Cuestionarios Interactivo ASIR</h3>
@@ -116,7 +116,7 @@
                 <!-- PROYECTO 2: Gestor de Archivos -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop&q=60" alt="Gestor de Archivos CLI">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop&q=60" alt="Gestor de Archivos CLI" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Gestor de Archivos CLI</h3>
@@ -144,7 +144,7 @@
                 <!-- PROYECTO 3: Allen Iverson -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?w=800&auto=format&fit=crop&q=60" alt="Página web Allen Iverson">
+                        <img src="https://images.unsplash.com/photo-1629901925121-8a141c2a42f4?w=800&auto=format&fit=crop&q=60" alt="Página web Allen Iverson" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Allen Iverson - The Answer</h3>
@@ -253,7 +253,7 @@
             <div class="contact-content">
                 <div class="contact-form">
                     <h3>Envíame un mensaje</h3>
-                    <form>
+                    <form action="" method="post" onsubmit="return false;"> <!-- TODO: replace with backend or service -->
                         <div class="form-group">
                             <label for="name">Nombre</label>
                             <input type="text" id="name" name="name" required>
@@ -264,7 +264,7 @@
                         </div>
                         <div class="form-group">
                             <label for="subject">Asunto</label>
-                            <input type="text" id="subjet" name="subject" required>
+                            <input type="text" id="subject" name="subject" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Mensaje</label>
@@ -293,7 +293,8 @@
             <p>&copy; Diego Pérez Fonterosa. Todos los derechos reservados</p>
             <p>Apasionado del desarrollo | <a href="privacy.html" style="color: #007bff">Política de Privacidad</a></p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/diegoperezfonterosa" target="_blank" class="linkedin" title="LinkedIn">LI
+                <a href="https://linkedin.com/in/diegoperezfonterosa" target="_blank" class="linkedin" title="LinkedIn" aria-label="LinkedIn">
+                    <span class="sr-only">LinkedIn</span>
                     <i class="fab fa-linkedin-in"></i>
                 </a>
                 <a href="https://github.com/diegofonterosa" target="_blank" class="github" title="GitHub">GH
@@ -308,7 +309,7 @@
 
     <div class="cookie-popup" id="cookiePopup">
         <div class="cookie-text">
-            <p>Este portfolio utiliza cookies propias y de terceros para mejorar la experiencia de navegación, realizar análisis estadísticos de visitas y mostrar contenido relevante. Al hacer clic en 'Aceptar', consientes el uso de todas las cookies. Puedes 'Rechazar' las cookies no esenciales en cualquier momento. Para más información, consulta nuestra Política de Cookies completa.<a href="#">Saber más</a></p>
+            <p>Este portfolio utiliza cookies propias y de terceros para mejorar la experiencia de navegación, realizar análisis estadísticos de visitas y mostrar contenido relevante. Al hacer clic en 'Aceptar', consientes el uso de todas las cookies. Puedes 'Rechazar' las cookies no esenciales en cualquier momento. Para más información, consulta nuestra Política de Cookies completa.<a href="cookies.html">Saber más</a></p>
         </div>
         <div class="cookie-buttons">
                 <button id="acceptCookies" class="btn">Aceptar</button>
@@ -316,6 +317,6 @@
             </div>
     </div>
 
-    <script src="js/javascript.js"></script>
+    <script src="js/javascript.js" defer></script>
 </body>
 </html>

@@ -3,8 +3,17 @@ const hamburguer = document.getElementById('hamburguer');
 const navMenu = document.getElementById('nav-menu');
 
 hamburguer.addEventListener('click', () => {
+    const expanded = hamburguer.getAttribute('aria-expanded') === 'true';
+    hamburguer.setAttribute('aria-expanded', String(!expanded));
     navMenu.classList.toggle('active');
-    })
+    });
+
+hamburguer.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        hamburguer.click();
+    }
+});
 
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
@@ -28,20 +37,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 //Política de cookies
 const popup = document.getElementById("cookiePopup");
 const acceptBtn = document.getElementById("acceptCookies");
-const rejectBtn = document.getElementById("rejectCookies")
+const rejectBtn = document.getElementById("rejectCookies");
 
-if(!localStorage.cookiesAccepted){
+// formulario de contacto (prevención básica)
+const contactForm = document.querySelector('form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('Formulario enviado', {
+            name: contactForm.name.value,
+            email: contactForm.email.value,
+            subject: contactForm.subject.value,
+            message: contactForm.message.value
+        });
+        alert('Gracias por tu mensaje — esto es un demo, implementa un backend para que funcione.');
+    });
+}
+
+if(!localStorage.cookiesAccepted && popup){
     popup.classList.add("show");
 }
 
-acceptBtn.addEventListener("click", function(){
+acceptBtn && acceptBtn.addEventListener("click", function(){
     localStorage.cookiesAccepted = "true";
     popup.classList.remove("show");
-    console.log("Cookies aceptadas")
+    console.log("Cookies aceptadas");
 });
 
-rejectBtnBtn.addEventListener("click", function(){
+rejectBtn && rejectBtn.addEventListener("click", function(){
     localStorage.cookiesAccepted = "false";
     popup.classList.remove("show");
-    console.log("Cookies rechazadas")
+    console.log("Cookies rechazadas");
 });
