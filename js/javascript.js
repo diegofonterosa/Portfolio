@@ -40,39 +40,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const acceptBtn = document.getElementById("acceptCookies");
     const rejectBtn = document.getElementById("rejectCookies");
 
-    console.log('Popup:', popup);
-    console.log('Accept Btn:', acceptBtn);
-    console.log('Reject Btn:', rejectBtn);
+    // Safety: ensure popup exists
+    if (!popup) return;
 
     // Mostrar popup si cookies no han sido aceptadas
-    if (popup && !localStorage.getItem('cookiesAccepted')) {
+    if (!localStorage.getItem('cookiesAccepted')) {
         popup.classList.add("show");
-        console.log('Mostrando popup de cookies');
+        // ensure visible
+        popup.style.display = 'flex';
     }
 
-    // Botón Aceptar
+    // Helper to hide popup (class + inline style fallback)
+    function hidePopup() {
+        popup.classList.remove('show');
+        try { popup.style.display = 'none'; } catch (e) {}
+    }
+
+    // Attach listeners with fallback checks
     if (acceptBtn) {
-        acceptBtn.addEventListener("click", function(e) {
-            e.preventDefault();
-            console.log('Aceptando cookies');
+        acceptBtn.addEventListener('click', function (e) {
+            e && e.preventDefault();
             localStorage.setItem('cookiesAccepted', 'true');
-            if (popup) {
-                popup.classList.remove("show");
-                console.log('Popup cerrado');
-            }
+            hidePopup();
         });
     }
 
-    // Botón Rechazar
     if (rejectBtn) {
-        rejectBtn.addEventListener("click", function(e) {
-            e.preventDefault();
-            console.log('Rechazando cookies');
+        rejectBtn.addEventListener('click', function (e) {
+            e && e.preventDefault();
             localStorage.setItem('cookiesAccepted', 'false');
-            if (popup) {
-                popup.classList.remove("show");
-                console.log('Popup cerrado');
-            }
+            hidePopup();
         });
     }
+
+    // Fallback: click outside popup to close (small UX improvement)
+    document.addEventListener('click', function (e) {
+        if (!popup.classList.contains('show')) return;
+        const rect = popup.getBoundingClientRect();
+        const within = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+        if (!within) hidePopup();
+    });
 });
