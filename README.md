@@ -317,7 +317,6 @@ Las contribuciones son bienvenidas. Si deseas mejorar el proyecto:
 **Diego Pérez Fonterosa**
 - **Ubicación**: Tui, Pontevedra, España
 - **Email**: diegofonterosa@gmail.com
-- **Teléfono**: +34 627 41 98 37
 - **GitHub**: [@diegofonterosa](https://github.com/diegofonterosa)
 - **LinkedIn**: [Diego Pérez Fonterosa](https://linkedin.com/in/diegoperezfonterosa)
 - **Instagram**: [@diegofonterosa](https://instagram.com/diegofonterosa)
