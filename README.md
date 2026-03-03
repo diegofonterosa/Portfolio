@@ -1,362 +1,166 @@
-# 💼 Diego Pérez Fonterosa - Portfolio Personal
+# 💻 Portfolio Personal — Diego Pérez Fonterosa
 
-Portfolio web profesional responsive desarrollado con HTML5, CSS3 y JavaScript vanilla. Presenta proyectos, experiencia laboral, formación académica y formulario de contacto funcional.
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![Responsive](https://img.shields.io/badge/Responsive-Mobile--First-4CAF50?style=flat-square)]()
+[![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-blue?style=flat-square)]()
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Responsive](https://img.shields.io/badge/Responsive-Design-green)
-![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7)
+Portfolio web personal desarrollado con **HTML5, CSS3 y JavaScript vanilla**. Diseño responsive con menú hamburguesa, scroll suave, política de cookies y fuentes locales. Presenta experiencia profesional, proyectos técnicos y formulario de contacto.
 
-## 📋 Descripción
+🌐 **Demo en vivo:** [diegofonterosa.com](#)
 
-Portfolio personal completo desarrollado desde cero con tecnologías web fundamentales (HTML5, CSS3, JavaScript). Implementa diseño responsive mobile-first, navegación con menú hamburguesa para móviles, sistema de cookies personalizado, fuentes locales optimizadas (Roboto y Playfair Display) y estructura semántica profesional. Diseñado para presentar proyectos técnicos, experiencia laboral en sistemas de telecomunicaciones y formación en Administración de Sistemas Informáticos en Red (ASIR).
+---
 
-## ✨ Características
+## 📂 Estructura del Proyecto
 
-- 📱 **Diseño Responsive**: Mobile-first con breakpoints optimizados
-- 🍔 **Menú Hamburguesa**: Navegación colapsable para dispositivos móviles
-- 🎨 **Gradient Hero**: Banner principal con degradado moderno
-- 🔤 **Fuentes Locales**: Roboto y Playfair Display cargadas localmente (WOFF2/WOFF)
-- 🍪 **Sistema de Cookies**: Popup personalizado con localStorage
-- 📄 **Secciones Completas**: Inicio, Sobre mí, Proyectos, CV, Contacto
-- ⚡ **Scroll Suave**: Navegación fluida entre secciones
-- 🔗 **Enlaces Sociales**: LinkedIn, GitHub, Instagram
-- 📋 **Política de Privacidad**: Página dedicada con estructura legal
-- 🎯 **SEO Básico**: Meta tags y estructura semántica
+```
+Portfolio/
+│
+├── 📄 index.html              # Página principal del portfolio
+├── 📄 privacy.html            # Política de privacidad (RGPD)
+│
+├── 📁 css/
+│   ├── style.css              # Estilos globales del portfolio
+│   └── privacy.css            # Estilos específicos de la página de privacidad
+│
+├── 📁 js/
+│   └── javascript.js          # Menú hamburguesa, scroll suave y cookies
+│
+└── 📁 fonts/                  # Fuentes locales (sin dependencia externa)
+    ├── Roboto-Regular.woff2
+    ├── Roboto-Bold.woff2
+    ├── Playfair144pt-Regular.woff2
+    └── Playfair144pt-Bold.woff2
+```
 
-## 🛠️ Tecnologías utilizadas
+---
 
-- **HTML5** - Estructura y contenido semántico
-- **CSS3** - Estilos, Grid, Flexbox, transiciones
-- **JavaScript (Vanilla)** - Interactividad, navegación, cookies
-- **Fuentes Web** - Roboto (body), Playfair Display (headings)
-- **Netlify** - Hosting y despliegue continuo
+## 🗂️ Secciones del Portfolio
 
-## 📦 Requisitos
+| Sección | ID | Descripción |
+|---|---|---|
+| **Inicio** | `#home` | Hero con nombre, rol y CTA |
+| **Sobre mí** | `#about` | Bio, experiencia y skill tags |
+| **Proyectos** | `#projects` | 3 tarjetas de proyectos destacados |
+| **Currículum** | `#resume` | Experiencia profesional y formación académica |
+| **Contacto** | `#contact` | Formulario + datos de contacto |
 
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- No requiere instalación ni dependencias externas
-- Fuentes incluidas localmente (no requiere conexión para cargar)
+---
 
-## 🚀 Instalación y uso
+## 🚀 Proyectos Destacados
 
-### Ver online
-🌐 **Demo en vivo**: [https://portfoliodiegofonterosa.netlify.app/](https://portfoliodiegofonterosa.netlify.app/)
+### 🐍 Sistema de Cuestionarios Interactivo ASIR
+Aplicación CLI en Python con ranking persistente en JSON y 3 categorías técnicas (Informática, Redes, Seguridad).  
+**Stack:** `Python` `JSON` `CLI` `Datetime`  
+🔗 [github.com/diegofonterosa/Proyecto_MPO](https://github.com/diegofonterosa/Proyecto_MPO)
 
-### Ejecutar localmente
+### 🗂️ Gestor de Archivos CLI
+Herramienta de línea de comandos para gestión CRUD de archivos y directorios con validaciones de seguridad y visualización de metadatos.  
+**Stack:** `Python` `OS Module` `CLI` `File System`  
+🔗 [github.com/diegofonterosa/Proyecto2_python](https://github.com/diegofonterosa/Proyecto2_python)
 
-1. **Clonar el repositorio**
+### 🏀 Allen Iverson — The Answer
+Sitio web tributo responsive con galería de 8 imágenes, 3 vídeos de YouTube integrados y HTML5 semántico.  
+**Stack:** `HTML5` `CSS3` `Responsive` `Netlify`  
+🌐 [proyecto-html-css-prometeo.netlify.app](https://proyecto-html-css-prometeo.netlify.app/)
+
+---
+
+## ✨ Características Técnicas
+
+### 📐 Diseño y Maquetación
+- Layout con **CSS Grid** en secciones Proyectos, Currículum y Contacto
+- Diseño **responsive mobile-first** con breakpoint a 768px
+- Menú hamburguesa animado en móvil con `classList.toggle('active')`
+- Header fijo (`position: fixed`) con sombra y z-index elevado
+- Transición `translateY(-15px)` en hover de tarjetas de proyecto
+
+### 🔤 Tipografía
+- **Roboto** (Regular 400 / Bold 700) — textos del cuerpo
+- **Playfair Display** (Regular 400 / Bold 700) — títulos `h1, h2, h3`
+- Fuentes cargadas **localmente** en formatos `.woff2` y `.woff` con `font-display: swap`
+
+### ⚙️ JavaScript
+- **Menú hamburguesa** — toggle de clase `active` sobre `#nav-menu`; se cierra al pulsar cualquier enlace
+- **Scroll suave** — `scrollIntoView({ behavior: 'smooth' })` para todos los enlaces `href="#..."`
+- **Política de cookies** — popup con `localStorage` para persistir la decisión (Aceptar / Rechazar)
+
+### 🔒 Privacidad y Legalidad
+- Página `privacy.html` con Política de Privacidad conforme al **RGPD**
+- Cookies de análisis anónimas con banner de consentimiento
+- Derechos de acceso, rectificación, supresión y portabilidad documentados
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+| Tecnología | Uso |
+|---|---|
+| **HTML5 semántico** | Estructura y marcado de todas las páginas |
+| **CSS3** | Grid, Flexbox, transiciones, animaciones, `@font-face` |
+| **JavaScript vanilla** | Interactividad, scroll suave, cookies |
+| **localStorage** | Persistencia de preferencias de cookies |
+
+> Sin frameworks externos ni dependencias npm — HTML, CSS y JS puros.
+
+---
+
+## ▶️ Cómo Ejecutar el Proyecto
+
+### Opción 1 — Abrir directamente en el navegador
+
 ```bash
-git clone https://github.com/diegofonterosa/portfolio-personal.git
-cd portfolio-personal
+git clone https://github.com/diegofonterosa/Portfolio.git
+cd Portfolio
+# Abre index.html en el navegador
 ```
 
-2. **Estructura de carpetas esperada**
-```
-portfolio-personal/
-├── index.html
-├── privacy.html
-├── css/
-│   ├── style.css
-│   ├── privacy.css
-│   └── fonts/
-│       ├── Roboto-Regular.woff2
-│       ├── Roboto-Regular.woff
-│       ├── Roboto-Bold.woff2
-│       ├── Roboto-Bold.woff
-│       ├── Playfair144pt-Regular.woff2
-│       ├── Playfair144pt-Regular.woff
-│       ├── Playfair144pt-Bold.woff2
-│       └── Playfair144pt-Bold.woff
-└── js/
-    └── javascript.js
-```
+### Opción 2 — Servidor local con VS Code
 
-3. **Abrir en navegador**
+Instala la extensión **Live Server** en VS Code, haz clic derecho sobre `index.html` y selecciona *"Open with Live Server"*.
+
+### Opción 3 — Servidor local con Python
+
 ```bash
-# Opción 1: Doble clic en index.html
-# Opción 2: Live Server en VS Code
-# Opción 3: Servidor local Python
 python -m http.server 8000
+# Abre http://localhost:8000 en el navegador
 ```
 
-4. **Navegar a**
-```
-http://localhost:8000
-```
+---
 
-## 📁 Estructura del proyecto
-```
-portfolio-personal/
-│
-├── index.html              # Página principal
-├── privacy.html            # Política de privacidad
-│
-├── css/
-│   ├── style.css           # Estilos principales
-│   ├── privacy.css         # Estilos página privacidad
-│   └── fonts/              # Fuentes locales (Roboto, Playfair)
-│
-├── js/
-│   └── javascript.js       # Lógica interactiva
-│
-└── README.md               # Este archivo
-```
+## 🎯 Objetivos de Aprendizaje
 
-## 🎯 Secciones del sitio
+- ✅ Maquetar un sitio web completo con HTML5 semántico
+- ✅ Dominar CSS Grid y Flexbox para layouts complejos
+- ✅ Implementar diseño responsive con media queries
+- ✅ Cargar fuentes localmente con `@font-face` y `font-display: swap`
+- ✅ Manipular el DOM con JavaScript vanilla sin librerías
+- ✅ Gestionar el consentimiento de cookies con `localStorage`
+- ✅ Redactar documentación legal conforme al RGPD
 
-### 1. Header / Navegación
-- Menú sticky con 5 secciones
-- Menú hamburguesa responsive (< 768px)
-- Scroll suave a secciones
+---
 
-### 2. Hero Section
-- Fondo con gradiente (púrpura/azul)
-- Nombre, título, descripción
-- CTA "Ver mis proyectos"
+## 📋 Requisitos
 
-### 3. Sobre mí
-- Foto/imagen representativa
-- Biografía profesional (15+ años experiencia)
-- Tags de habilidades técnicas:
-  - HTML, CSS, JavaScript
-  - Python, Node.js
+- Navegador moderno (Chrome, Firefox, Edge, Safari)
+- No requiere instalación ni dependencias
 
-### 4. Proyectos
-Grid responsive con 3 proyectos:
-- **Allen Iverson Tribute** (HTML/CSS)
-- **Sistema Cuestionarios ASIR** (Python)
-- **Gestor de Archivos CLI** (Python)
+---
 
-Cada proyecto incluye:
-- Imagen
-- Título y descripción
-- Tags de tecnologías
-- Enlace al proyecto/código
-
-### 5. Currículum
-Dos columnas (desktop) / apiladas (móvil):
-
-**Experiencia Profesional:**
-- Operador CRA - Segursystem Europa (2009-2025)
-- Operario - Kingspan (2008)
-- Reponedor - Gadis (2002-2004)
-
-**Formación:**
-- Ciclo Superior Telecomunicaciones (2007)
-- Bachillerato Humanidades (2005)
-
-### 6. Contacto
-Dos columnas:
-- **Formulario**: Nombre, Email, Asunto, Mensaje
-- **Información**: Email, Teléfono, LinkedIn
-
-### 7. Footer
-- Copyright
-- Enlaces sociales (LinkedIn, GitHub, Instagram)
-- Link a Política de Privacidad
-
-### 8. Popup de Cookies
-- Aparece en primera visita
-- Opciones: Aceptar / Rechazar
-- Persistencia con localStorage
-
-## 💻 Características técnicas implementadas
-
-### HTML5
-- ✅ Estructura semántica completa
-- ✅ Meta viewport para responsive
-- ✅ Favicon personalizado
-- ✅ Atributos de accesibilidad (title en links)
-- ✅ IDs para navegación interna
-
-### CSS3
-- ✅ CSS Grid para layouts complejos
-- ✅ Flexbox para alineación
-- ✅ Variables CSS (colores, espaciados)
-- ✅ @font-face para fuentes locales
-- ✅ Media queries (breakpoint 768px)
-- ✅ Transiciones y hover effects
-- ✅ Gradientes lineales
-- ✅ Box-shadow para profundidad
-
-### JavaScript
-- ✅ Toggle menú hamburguesa
-- ✅ Cierre automático de menú al navegar
-- ✅ Smooth scroll a secciones
-- ✅ Sistema cookies con localStorage
-- ✅ Event listeners optimizados
-
-### Responsive Design
-- ✅ Mobile-first approach
-- ✅ Grid adaptativo (auto-fit)
-- ✅ Menú colapsable < 768px
-- ✅ Columnas apiladas en móvil
-- ✅ Tamaños de fuente escalables
-
-### Performance
-- ✅ Fuentes locales (no requests externos)
-- ✅ CSS/JS separados en archivos
-- ✅ Imágenes desde Unsplash CDN
-- ✅ Sin librerías pesadas (jQuery, Bootstrap)
-
-## 🎨 Paleta de colores
-```css
-:root {
-  /* Colores principales */
-  --primary-blue: #007bff;
-  --primary-blue-dark: #0056b3;
-  --gradient-start: #667eea;
-  --gradient-end: #764ba2;
-  
-  /* Neutrales */
-  --text-dark: #333;
-  --text-medium: #666;
-  --text-light: #495057;
-  --background: #f8f9fa;
-  --white: #fff;
-  
-  /* Grises */
-  --gray-100: #e9ecef;
-  --gray-300: #ddd;
-  --gray-600: #6c757d;
-  --gray-700: #545b62;
-}
-```
-
-## 📱 Responsive Breakpoints
-```css
-/* Mobile: < 768px (por defecto) */
-
-/* Tablet y Desktop: >= 768px */
-@media (max-width: 768px) {
-  /* Menú hamburguesa activo */
-  /* Grid a 1 columna */
-  /* Padding reducido */
-}
-```
-
-## 🔧 Posibles mejoras futuras
-
-### Funcionalidad
-- [ ] Formulario funcional con Netlify Forms
-- [ ] Modo oscuro/claro toggle
-- [ ] Animaciones scroll (Intersection Observer)
-- [ ] Validación de formulario en tiempo real
-- [ ] Página de proyectos individual para cada uno
-- [ ] Blog o sección de artículos técnicos
-- [ ] Filtros de proyectos por tecnología
-
-### Contenido
-- [ ] Añadir sección de certificaciones
-- [ ] Timeline de carrera profesional
-- [ ] Testimonios o recomendaciones
-- [ ] Más proyectos (mínimo 6 totales)
-- [ ] Sección "Skills" con barras de progreso
-- [ ] Integración con API de GitHub (repos dinámicos)
-
-### Técnico
-- [ ] Lazy loading para imágenes
-- [ ] Service Worker (PWA)
-- [ ] Optimización SEO avanzada (Schema.org)
-- [ ] Analytics (Google Analytics o alternativa)
-- [ ] Sitemap XML
-- [ ] Tests automatizados
-
-### Performance
-- [ ] Minificación de CSS/JS
-- [ ] Compresión de imágenes (WebP)
-- [ ] Critical CSS inline
-- [ ] Precarga de fuentes
-
-## 📖 Aprendizajes del proyecto
-
-Este proyecto permitió consolidar:
-- Diseño web responsive desde cero
-- Arquitectura CSS escalable (sin frameworks)
-- JavaScript vanilla para interactividad
-- Optimización de fuentes web
-- Gestión de localStorage
-- Sistema de navegación fluida
-- Buenas prácticas de accesibilidad
-- Estructura semántica HTML5
-
-## 🐛 Bugs conocidos y soluciones
-
-### Bug 1: Typo en JavaScript
-```javascript
-// ❌ MAL (línea actual)
-rejectBtnBtn.addEventListener("click", ...
-
-// ✅ BIEN (corrección)
-rejectBtn.addEventListener("click", ...
-```
-
-### Bug 2: Formulario sin acción
-El formulario no tiene `method` ni `action`. Para hacerlo funcional con Netlify:
-```html
-<form name="contacto" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contacto">
-  <!-- resto del formulario -->
-</form>
-```
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Si deseas mejorar el proyecto:
-
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/NuevaCaracteristica`)
-3. Commit tus cambios (`git commit -m 'Añadir nueva característica'`)
-4. Push a la rama (`git push origin feature/NuevaCaracteristica`)
-5. Abre un Pull Request
-
-## 👤 Autor
+## 👨‍💻 Autor
 
 **Diego Pérez Fonterosa**
-- **Ubicación**: Tui, Pontevedra, España
-- **Email**: diegofonterosa@gmail.com
-- **GitHub**: [@diegofonterosa](https://github.com/diegofonterosa)
-- **LinkedIn**: [Diego Pérez Fonterosa](https://linkedin.com/in/diegoperezfonterosa)
-- **Instagram**: [@diegofonterosa](https://instagram.com/diegofonterosa)
+
+[![GitHub](https://img.shields.io/badge/GitHub-diegofonterosa-181717?style=flat-square&logo=github)](https://github.com/diegofonterosa)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Diego%20Pérez-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/diegoperezfonterosa)
+[![Instagram](https://img.shields.io/badge/Instagram-diegofonterosa-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://instagram.com/diegofonterosa)
+
+> Técnico de Soporte CRA en Segursystem Europa · Cursando ASIR y Máster en Ciberseguridad
+
+---
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
-
-## 📞 Contacto
-
-Para preguntas, colaboraciones o sugerencias:
-- **Email**: diegofonterosa@gmail.com
-- **LinkedIn**: https://linkedin.com/in/diegoperezfonterosa
-- **Portfolio**: https://portfoliodiegofonterosa.netlify.app
-
-## 🙏 Créditos
-
-- **Fuentes**: Google Fonts (Roboto, Playfair Display)
-- **Imágenes**: Unsplash (fotos de stock)
-- **Hosting**: Netlify
-- **Inspiración**: Portfolios modernos de desarrolladores frontend
-
----
-
-⭐ **Si te gustó este portfolio, dale una estrella en GitHub!**
-
-**#WebDevelopment #HTML5 #CSS3 #JavaScript #Portfolio #ASIR #ResponsiveDesign**
-```
-
----
-html5
-css3
-javascript
-portfolio
-responsive-design
-mobile-first
-web-development
-frontend
-netlify
-vanilla-js
-personal-website
-css-grid
-flexbox
+© Diego Pérez Fonterosa. Todos los derechos reservados.  
+Este proyecto es un portfolio personal. No está permitida su reproducción o redistribución sin autorización del autor.
