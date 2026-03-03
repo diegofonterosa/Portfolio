@@ -39,18 +39,12 @@ const popup = document.getElementById("cookiePopup");
 const acceptBtn = document.getElementById("acceptCookies");
 const rejectBtn = document.getElementById("rejectCookies");
 
-// formulario de contacto (prevención básica)
+// formulario de contacto - Formspree se encarga del envío
 const contactForm = document.querySelector('form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        console.log('Formulario enviado', {
-            name: contactForm.name.value,
-            email: contactForm.email.value,
-            subject: contactForm.subject.value,
-            message: contactForm.message.value
-        });
-        alert('Gracias por tu mensaje — esto es un demo, implementa un backend para que funcione.');
+        // Formspree maneja el envío automáticamente
+        console.log('Formulario enviado a través de Formspree');
     });
 }
 
