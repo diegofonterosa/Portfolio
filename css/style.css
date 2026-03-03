@@ -105,11 +105,42 @@ body{font-family:'Roboto',Arial,sans-serif;background:#282850;color:#e8e8e8;line
 /* Footer / Social */
 .footer{padding:40px 0;text-align:center;color:#d0d0d0;border-top:1px solid rgba(0,255,65,0.06)}
 .social-links{display:flex;gap:16px;justify-content:center;margin-top:12px}
-.social-links a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#00ff41;color:#0a0e27;text-decoration:none}
-.social-links a:hover{transform:translateY(-3px)}
-.social-links a.instagram:hover{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743)}
-.social-links a.github:hover{background:#00d4ff;color:#0a0e27}
-.social-links a.linkedin:hover{background:#0077B5;color:#fff}
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    max-width: 160px;
+    height: 44px;
+    border-radius: 50px;
+    background: #00ff41;
+    color: #0a0e27;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.social-links a:hover {
+    transform: translateY(-3px);
+    background: #00d4ff;
+    color: #222;
+    box-shadow: 0 0 18px rgba(0,212,255,0.18);
+}
+.social-links a.instagram:hover {
+    background: linear-gradient(45deg,#f09433,#e6683c,#dc2743);
+    color: #fff;
+}
+.social-links a.github:hover {
+    background: #00d4ff;
+    color: #0a0e27;
+}
+.social-links a.linkedin:hover {
+    background: #0077B5;
+    color: #fff;
+}
 
 /* Responsive tweaks */
 @media(max-width:900px){.about-content{grid-template-columns:1fr}.resume-content,.projects-grid{grid-template-columns:1fr}}
