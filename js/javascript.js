@@ -34,32 +34,45 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-//Política de cookies
-const popup = document.getElementById("cookiePopup");
-const acceptBtn = document.getElementById("acceptCookies");
-const rejectBtn = document.getElementById("rejectCookies");
+// Política de cookies - Mejorado
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById("cookiePopup");
+    const acceptBtn = document.getElementById("acceptCookies");
+    const rejectBtn = document.getElementById("rejectCookies");
 
-// formulario de contacto - Formspree se encarga del envío
-const contactForm = document.querySelector('form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        // Formspree maneja el envío automáticamente
-        console.log('Formulario enviado a través de Formspree');
-    });
-}
+    console.log('Popup:', popup);
+    console.log('Accept Btn:', acceptBtn);
+    console.log('Reject Btn:', rejectBtn);
 
-if(!localStorage.cookiesAccepted && popup){
-    popup.classList.add("show");
-}
+    // Mostrar popup si cookies no han sido aceptadas
+    if (popup && !localStorage.getItem('cookiesAccepted')) {
+        popup.classList.add("show");
+        console.log('Mostrando popup de cookies');
+    }
 
-acceptBtn && acceptBtn.addEventListener("click", function(){
-    localStorage.cookiesAccepted = "true";
-    popup.classList.remove("show");
-    console.log("Cookies aceptadas");
-});
+    // Botón Aceptar
+    if (acceptBtn) {
+        acceptBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            console.log('Aceptando cookies');
+            localStorage.setItem('cookiesAccepted', 'true');
+            if (popup) {
+                popup.classList.remove("show");
+                console.log('Popup cerrado');
+            }
+        });
+    }
 
-rejectBtn && rejectBtn.addEventListener("click", function(){
-    localStorage.cookiesAccepted = "false";
-    popup.classList.remove("show");
-    console.log("Cookies rechazadas");
+    // Botón Rechazar
+    if (rejectBtn) {
+        rejectBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            console.log('Rechazando cookies');
+            localStorage.setItem('cookiesAccepted', 'false');
+            if (popup) {
+                popup.classList.remove("show");
+                console.log('Popup cerrado');
+            }
+        });
+    }
 });
