@@ -156,7 +156,7 @@ python -m http.server 8000
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Diego%20Pérez-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/diegoperezfonterosa)
 [![Instagram](https://img.shields.io/badge/Instagram-diegofonterosa-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://instagram.com/diegofonterosa)
 
-> Cursando ASIR y Máster en Ciberseguridad
+> Técnico en Sistemas de Telecomunicaciones e Informáticos (STI) | Estudiante de Administración de Sistemas Informáticos en Red (ASIR)
 
 ---
 
