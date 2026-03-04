@@ -81,3 +81,48 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!within) hidePopup();
     });
 });
+
+// Formulario de contacto
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contactForm');
+    const contactStatus = document.getElementById('contactStatus');
+
+    if (!contactForm || !contactStatus) return;
+
+    function encodeFormData(form) {
+        return new URLSearchParams(new FormData(form)).toString();
+    }
+
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        if (!contactForm.checkValidity()) {
+            contactStatus.textContent = 'Completa todos los campos con datos válidos.';
+            contactStatus.style.color = '#ff6b6b';
+            contactForm.reportValidity();
+            return;
+        }
+
+        contactStatus.textContent = 'Enviando mensaje...';
+        contactStatus.style.color = '#00d4ff';
+
+        try {
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: encodeFormData(contactForm)
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al enviar el formulario');
+            }
+
+            contactStatus.textContent = 'Mensaje enviado correctamente. Gracias por contactar.';
+            contactStatus.style.color = '#00ff41';
+            contactForm.reset();
+        } catch (error) {
+            contactStatus.textContent = 'No se pudo enviar ahora. Inténtalo de nuevo en unos minutos.';
+            contactStatus.style.color = '#ff6b6b';
+        }
+    });
+});

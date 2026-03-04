@@ -34,6 +34,10 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
+            <div class="availability-badge" aria-label="Estado de disponibilidad">
+                <span class="availability-dot" aria-hidden="true"></span>
+                <span>Disponible para prácticas</span>
+            </div>
             <h1>Diego Pérez Fonterosa</h1>
             <p class="hero-subtitle">Técnico en Sistemas de Telecomunicaciones e Informáticos (STI) | Estudiante de Administración de Sistemas Informáticos en Red (ASIR)</p>
             <p class="hero-description">Linux Hardening | Vulnerability Assessment | Cloud Security (Azure) | Incident Response</p>
@@ -342,11 +346,27 @@
             <div class="contact-content">
                 <div class="contact-form">
                     <h3>Contáctame</h3>
-                    <p style="color: #b0b0b0; margin-bottom: 30px; font-size: 1rem; line-height: 1.6;">Me encantaría saber de ti. Puedes contactarme directamente a través de email o visitar mis perfiles sociales para más información sobre mis proyectos.</p>
-                    <div style="display: flex; gap: 15px; flex-direction: column;">
-                        <a href="mailto:diegofonterosa@gmail.com" class="btn" style="text-align: center;">📧 Enviar Email</a>
-                        <a href="https://linkedin.com/in/diegoperezfonterosa" target="_blank" class="btn btn-secondary" style="text-align: center;">💼 LinkedIn</a>
-                    </div>
+                    <p class="contact-intro">Me encantaría saber de ti. Si estás buscando perfil para prácticas, completa este formulario y te respondo lo antes posible.</p>
+                    <form id="contactForm" class="contact-form-fields" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+                        <input type="hidden" name="form-name" value="contact">
+                        <p hidden>
+                            <label>No rellenar: <input name="bot-field"></label>
+                        </p>
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+
+                        <label for="subject">Asunto</label>
+                        <input type="text" id="subject" name="subject" required>
+
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                        <button type="submit" class="btn">Enviar mensaje</button>
+                        <p id="contactStatus" class="contact-status" aria-live="polite"></p>
+                    </form>
                 </div>
             
 

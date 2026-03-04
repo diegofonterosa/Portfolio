@@ -18,20 +18,19 @@ Portfolio web personal desarrollado con **HTML5, CSS3 y JavaScript vanilla**. Di
 Portfolio/
 │
 ├── 📄 index.html              # Página principal del portfolio
+├── 📄 cookies.html            # Política de cookies
 ├── 📄 privacy.html            # Política de privacidad (RGPD)
 │
 ├── 📁 css/
 │   ├── style.css              # Estilos globales del portfolio
-│   └── privacy.css            # Estilos específicos de la página de privacidad
+│   ├── privacy.css            # Estilos específicos de la página de privacidad
+│   └── 📁 fonts/              # Fuentes locales
+│       ├── Roboto-Regular.woff2
+│       ├── Roboto-Bold.woff2
+│       └── Playfair144pt-Regular.woff2
 │
 ├── 📁 js/
-│   └── javascript.js          # Menú hamburguesa, scroll suave y cookies
-│
-└── 📁 fonts/                  # Fuentes locales (sin dependencia externa)
-    ├── Roboto-Regular.woff2
-    ├── Roboto-Bold.woff2
-    ├── Playfair144pt-Regular.woff2
-    └── Playfair144pt-Bold.woff2
+│   └── javascript.js          # Menú hamburguesa, scroll suave, cookies y formulario
 ```
 
 ---
@@ -40,7 +39,7 @@ Portfolio/
 
 | Sección | ID | Descripción |
 |---|---|---|
-| **Inicio** | `#home` | Hero con nombre, rol y CTA |
+| **Inicio** | `#home` | Hero con nombre, rol, badge de disponibilidad y CTA |
 | **Sobre mí** | `#about` | Bio, experiencia y skill tags |
 | **Proyectos** | `#projects` | 3 tarjetas de proyectos destacados |
 | **Currículum** | `#resume` | Experiencia profesional y formación académica |
@@ -60,10 +59,10 @@ Herramienta de línea de comandos para gestión CRUD de archivos y directorios c
 **Stack:** `Python` `OS Module` `CLI` `File System`  
 🔗 [github.com/diegofonterosa/Proyecto2_python](https://github.com/diegofonterosa/Proyecto2_python)
 
-### 🏀 Allen Iverson — The Answer
-Sitio web tributo responsive con galería de 8 imágenes, 3 vídeos de YouTube integrados y HTML5 semántico.  
-**Stack:** `HTML5` `CSS3` `Responsive` `Netlify`  
-🌐 [proyecto-html-css-prometeo.netlify.app](https://proyecto-html-css-prometeo.netlify.app/)
+### 🤖 Udemy Free Courses Automation Bot
+Bot en Python para automatizar búsqueda y recopilación de cursos gratuitos, con scraping y filtrado de resultados.  
+**Stack:** `Python` `Web Scraping` `Automation` `API Integration`  
+🔗 [github.com/diegofonterosa/udemy-free-course-bot](https://github.com/diegofonterosa/udemy-free-course-bot)
 
 ---
 
@@ -79,12 +78,16 @@ Sitio web tributo responsive con galería de 8 imágenes, 3 vídeos de YouTube i
 ### 🔤 Tipografía
 - **Roboto** (Regular 400 / Bold 700) — textos del cuerpo
 - **Playfair Display** (Regular 400 / Bold 700) — títulos `h1, h2, h3`
-- Fuentes cargadas **localmente** en formatos `.woff2` y `.woff` con `font-display: swap`
+- Fuentes cargadas **localmente** en formato `.woff2` con `font-display: swap`
 
 ### ⚙️ JavaScript
 - **Menú hamburguesa** — toggle de clase `active` sobre `#nav-menu`; se cierra al pulsar cualquier enlace
 - **Scroll suave** — `scrollIntoView({ behavior: 'smooth' })` para todos los enlaces `href="#..."`
 - **Política de cookies** — popup con `localStorage` para persistir la decisión (Aceptar / Rechazar)
+- **Formulario de contacto** — envío real con **Netlify Forms** vía `POST` + validación HTML5 + mensaje inline de estado
+
+### 🟢 Disponibilidad
+- Badge visual pulsante en el hero con el mensaje **"Disponible para prácticas"** para visibilidad inmediata del perfil
 
 ### 🔒 Privacidad y Legalidad
 - Página `privacy.html` con Política de Privacidad conforme al **RGPD**
@@ -100,6 +103,7 @@ Sitio web tributo responsive con galería de 8 imágenes, 3 vídeos de YouTube i
 | **HTML5 semántico** | Estructura y marcado de todas las páginas |
 | **CSS3** | Grid, Flexbox, transiciones, animaciones, `@font-face` |
 | **JavaScript vanilla** | Interactividad, scroll suave, cookies |
+| **Netlify Forms** | Recepción de mensajes del formulario de contacto |
 | **localStorage** | Persistencia de preferencias de cookies |
 
 > Sin frameworks externos ni dependencias npm — HTML, CSS y JS puros.
