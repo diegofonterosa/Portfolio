@@ -107,8 +107,11 @@ document.addEventListener('DOMContentLoaded', function () {
         contactStatus.style.color = '#00d4ff';
 
         try {
-            const action = contactForm.getAttribute('action') || window.location.pathname || '/';
-            const response = await fetch(action, {
+            const isNetlifyForm = contactForm.hasAttribute('data-netlify');
+            const postUrl = isNetlifyForm ? '/' : (contactForm.getAttribute('action') || window.location.pathname || '/');
+            const successUrl = contactForm.getAttribute('action') || '/success.html';
+
+            const response = await fetch(postUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: encodeFormData(contactForm)
@@ -118,9 +121,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error('Error al enviar el formulario');
             }
 
-            contactStatus.textContent = 'Mensaje enviado correctamente. Gracias por contactar.';
+            contactStatus.textContent = 'Mensaje enviado correctamente. Redirigiendo...';
             contactStatus.style.color = '#00ff41';
-            contactForm.reset();
+            window.location.href = successUrl;
         } catch (error) {
             // If AJAX fails, fallback to native submit so platform handlers (e.g. Netlify Forms) can process it.
             contactStatus.textContent = 'Reintentando envio con metodo alternativo...';
