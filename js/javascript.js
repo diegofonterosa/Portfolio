@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             const isNetlifyForm = contactForm.hasAttribute('data-netlify');
             const postUrl = isNetlifyForm ? '/' : (contactForm.getAttribute('action') || window.location.pathname || '/');
-            const successUrl = contactForm.getAttribute('action') || '/success.html';
+            const successUrl = contactForm.getAttribute('data-success-url') || '/success.html';
 
             const response = await fetch(postUrl, {
                 method: 'POST',
@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // If AJAX fails, fallback to native submit so platform handlers (e.g. Netlify Forms) can process it.
             contactStatus.textContent = 'Reintentando envio con metodo alternativo...';
             contactStatus.style.color = '#ffd166';
+            contactForm.setAttribute('action', '/');
             contactForm.submit();
         }
     });
