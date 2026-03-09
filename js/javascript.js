@@ -93,6 +93,27 @@ document.addEventListener('DOMContentLoaded', function () {
         return new URLSearchParams(new FormData(form)).toString();
     }
 
+    function openMailFallback(form) {
+        const name = (form.querySelector('#name') || {}).value || '';
+        const email = (form.querySelector('#email') || {}).value || '';
+        const subject = (form.querySelector('#subject') || {}).value || 'Contacto desde portfolio';
+        const message = (form.querySelector('#message') || {}).value || '';
+
+        const body = [
+            'Nombre: ' + name,
+            'Email: ' + email,
+            '',
+            'Mensaje:',
+            message
+        ].join('\n');
+
+        const mailto = 'mailto:diegofonterosa@gmail.com?subject=' +
+            encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent(body);
+
+        window.location.href = mailto;
+    }
+
     contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
@@ -107,7 +128,8 @@ document.addEventListener('DOMContentLoaded', function () {
         contactStatus.style.color = '#00d4ff';
 
         try {
-            const response = await fetch('/', {
+            const action = contactForm.getAttribute('action') || window.location.pathname || '/';
+            const response = await fetch(action, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: encodeFormData(contactForm)
@@ -121,8 +143,10 @@ document.addEventListener('DOMContentLoaded', function () {
             contactStatus.style.color = '#00ff41';
             contactForm.reset();
         } catch (error) {
-            contactStatus.textContent = 'No se pudo enviar ahora. Inténtalo de nuevo en unos minutos.';
-            contactStatus.style.color = '#ff6b6b';
+            // Fallback for static hosts/local preview where POST endpoints are unavailable.
+            openMailFallback(contactForm);
+            contactStatus.textContent = 'No se pudo enviar de forma automatica. Se abrio tu cliente de correo como alternativa.';
+            contactStatus.style.color = '#ffd166';
         }
     });
 });
