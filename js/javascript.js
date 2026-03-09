@@ -93,27 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return new URLSearchParams(new FormData(form)).toString();
     }
 
-    function openMailFallback(form) {
-        const name = (form.querySelector('#name') || {}).value || '';
-        const email = (form.querySelector('#email') || {}).value || '';
-        const subject = (form.querySelector('#subject') || {}).value || 'Contacto desde portfolio';
-        const message = (form.querySelector('#message') || {}).value || '';
-
-        const body = [
-            'Nombre: ' + name,
-            'Email: ' + email,
-            '',
-            'Mensaje:',
-            message
-        ].join('\n');
-
-        const mailto = 'mailto:diegofonterosa@gmail.com?subject=' +
-            encodeURIComponent(subject) +
-            '&body=' + encodeURIComponent(body);
-
-        window.location.href = mailto;
-    }
-
     contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
@@ -143,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function () {
             contactStatus.style.color = '#00ff41';
             contactForm.reset();
         } catch (error) {
-            // Fallback for static hosts/local preview where POST endpoints are unavailable.
-            openMailFallback(contactForm);
-            contactStatus.textContent = 'No se pudo enviar de forma automatica. Se abrio tu cliente de correo como alternativa.';
+            // If AJAX fails, fallback to native submit so platform handlers (e.g. Netlify Forms) can process it.
+            contactStatus.textContent = 'Reintentando envio con metodo alternativo...';
             contactStatus.style.color = '#ffd166';
+            contactForm.submit();
         }
     });
 });
