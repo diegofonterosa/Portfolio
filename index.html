@@ -169,22 +169,23 @@ experiencia : 16 años CRA 24/7
                     <div class="project-content">
                         <h3 class="project-title">Honeypot SSH con inteligencia de amenazas MITRE ATT&amp;CK</h3>
                         <p class="project-description">
-                            Despliegue de un honeypot Cowrie expuesto a Internet en un VPS de Hetzner para capturar ataques reales durante cuatro semanas y convertirlos en un informe de inteligencia de amenazas.
+                            Honeypot SSH expuesto a Internet en un VPS de Hetzner durante 28 días. Los ataques reales capturados se convierten en un informe de inteligencia de amenazas.
                         </p>
                         <ul class="project-features">
-                            <li>Cowrie escuchando en el puerto 22 (SSH) de un servidor dedicado</li>
-                            <li>Firewall con iptables en el servidor</li>
-                            <li>Script propio en Python (<code>cowrie_analyzer.py</code>) para analizar los logs</li>
-                            <li>Técnicas observadas mapeadas a MITRE ATT&amp;CK en un informe de inteligencia</li>
+                            <li>216.222 sesiones desde 4.028 IP de 119 países</li>
+                            <li>24 técnicas MITRE ATT&amp;CK en 9 tácticas, con clasificador propio en Python (52/52 pruebas)</li>
+                            <li>Campañas identificadas: botnet Outlaw/Dota, criptominero RedTail y credential stuffing por huella HASSH</li>
+                            <li>Hardening del servidor con iptables y prueba de integración con Wazuh</li>
                         </ul>
                         <div class="project-tech">
                             <span class="tech-tag">Cowrie</span>
                             <span class="tech-tag">Hetzner Cloud</span>
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">MITRE ATT&amp;CK</span>
-                            <span class="tech-tag">iptables</span>
+                            <span class="tech-tag">Wazuh</span>
                         </div>
-                        <p class="project-note">Defensa en diciembre de 2026</p>
+                        <a href="https://github.com/diegofonterosa/PFC-Cowrie" class="btn" target="_blank" rel="noopener noreferrer">Ver código</a>
+                        <p class="project-note">Proyecto final de ASIR · defensa en diciembre de 2026</p>
                     </div>
                 </article>
 
@@ -299,16 +300,16 @@ experiencia : 16 años CRA 24/7
             <h3 class="subsection-title">Otros proyectos</h3>
             <ul class="mini-projects">
                 <li>
-                    <a href="https://github.com/diegofonterosa/Proyecto_MPO" target="_blank" rel="noopener noreferrer">Quiz ASIR</a>
+                    <a href="https://github.com/diegofonterosa/ASIR-Interactive-Quiz-System" target="_blank" rel="noopener noreferrer">Quiz ASIR</a>
                     <span>Cuestionario CLI en Python con ranking persistente en JSON.</span>
                 </li>
                 <li>
-                    <a href="https://github.com/diegofonterosa/Proyecto2_python" target="_blank" rel="noopener noreferrer">Gestor de archivos CLI</a>
+                    <a href="https://github.com/diegofonterosa/File-Manager-CLI-Python" target="_blank" rel="noopener noreferrer">Gestor de archivos CLI</a>
                     <span>Operaciones sobre archivos con validaciones y metadatos del sistema.</span>
                 </li>
                 <li>
                     <a href="https://github.com/diegofonterosa/udemy-free-course-bot" target="_blank" rel="noopener noreferrer">Udemy Free Course Bot</a>
-                    <span>Automatización en Python para localizar cursos gratuitos.</span>
+                    <span>Bot en Python que detecta cursos gratuitos y avisa por Telegram.</span>
                 </li>
             </ul>
 
