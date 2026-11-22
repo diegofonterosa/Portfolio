@@ -2,96 +2,32 @@
 const hamburguer = document.getElementById('hamburguer');
 const navMenu = document.getElementById('nav-menu');
 
-hamburguer.addEventListener('click', () => {
-    const expanded = hamburguer.getAttribute('aria-expanded') === 'true';
-    hamburguer.setAttribute('aria-expanded', String(!expanded));
-    navMenu.classList.toggle('active');
+function setMenu(open) {
+    navMenu.classList.toggle('active', open);
+    hamburguer.setAttribute('aria-expanded', String(open));
+    hamburguer.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+}
+
+if (hamburguer && navMenu) {
+    hamburguer.addEventListener('click', () => {
+        setMenu(!navMenu.classList.contains('active'));
     });
 
-hamburguer.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        hamburguer.click();
-    }
-});
-
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active')
-    })
-})
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMenu(false));
     });
-});
 
-// Política de cookies - Mejorado
-document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById("cookiePopup");
-    const acceptBtn = document.getElementById("acceptCookies");
-    const rejectBtn = document.getElementById("rejectCookies");
-
-    // Safety: ensure popup exists
-    if (!popup) return;
-
-    // Mostrar popup si cookies no han sido aceptadas
-    if (!localStorage.getItem('cookiesAccepted')) {
-        popup.classList.add("show");
-        // ensure visible
-        popup.style.display = 'flex';
-    }
-
-    // Helper to hide popup (class + inline style fallback)
-    function hidePopup() {
-        popup.classList.remove('show');
-        try { popup.style.display = 'none'; } catch (e) {}
-    }
-
-    // Attach listeners with fallback checks
-    if (acceptBtn) {
-        acceptBtn.addEventListener('click', function (e) {
-            e && e.preventDefault();
-            localStorage.setItem('cookiesAccepted', 'true');
-            hidePopup();
-        });
-    }
-
-    if (rejectBtn) {
-        rejectBtn.addEventListener('click', function (e) {
-            e && e.preventDefault();
-            localStorage.setItem('cookiesAccepted', 'false');
-            hidePopup();
-        });
-    }
-
-    // Fallback: click outside popup to close (small UX improvement)
-    document.addEventListener('click', function (e) {
-        if (!popup.classList.contains('show')) return;
-        const rect = popup.getBoundingClientRect();
-        const within = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
-        if (!within) hidePopup();
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setMenu(false);
     });
-});
+}
 
-// Formulario de contacto
+// Formulario de contacto (Netlify Forms)
 document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
     const contactStatus = document.getElementById('contactStatus');
 
     if (!contactForm || !contactStatus) return;
-
-    function encodeFormData(form) {
-        return new URLSearchParams(new FormData(form)).toString();
-    }
 
     contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -106,29 +42,20 @@ document.addEventListener('DOMContentLoaded', function () {
         contactStatus.textContent = 'Enviando mensaje...';
         contactStatus.style.color = '#00d4ff';
 
-        try {
-            const isNetlifyForm = contactForm.hasAttribute('data-netlify');
-            const postUrl = isNetlifyForm ? '/' : (contactForm.getAttribute('action') || window.location.pathname || '/');
-            const successUrl = contactForm.getAttribute('data-success-url') || '/success.html';
+        const successUrl = contactForm.getAttribute('data-success-url') || '/success.html';
 
-            const response = await fetch(postUrl, {
+        try {
+            const response = await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: encodeFormData(contactForm)
+                body: new URLSearchParams(new FormData(contactForm)).toString()
             });
 
-            if (!response.ok) {
-                throw new Error('Error al enviar el formulario');
-            }
+            if (!response.ok) throw new Error('HTTP ' + response.status);
 
-            contactStatus.textContent = 'Mensaje enviado correctamente. Redirigiendo...';
-            contactStatus.style.color = '#00ff41';
             window.location.href = successUrl;
         } catch (error) {
-            // If AJAX fails, fallback to native submit so platform handlers (e.g. Netlify Forms) can process it.
-            contactStatus.textContent = 'Reintentando envio con metodo alternativo...';
-            contactStatus.style.color = '#ffd166';
-            contactForm.setAttribute('action', '/');
+            // Si falla el envío por fetch, se usa el envío nativo del formulario
             contactForm.submit();
         }
     });

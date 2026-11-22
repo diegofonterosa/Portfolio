@@ -4,46 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Diego Pérez Fonterosa">
-    <meta name="description" content="Portfolio personal de Diego Pérez Fonterosa - Técnico en Sistemas de Telecomunicaciones e Informáticos (STI) y Estudiante de Administración de Sistemas Informáticos en Red (ASIR)">
-    <meta name="keywords" content="ASIR, administración sistemas, redes, ciberseguridad, Python, HTML, CSS, portfolio">
-    
-    <!-- FAVICON - Emoji computadora 💻 -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-    
-    <title>Diego Pérez Fonterosa - Portfolio Personal</title>
+    <meta name="description" content="Portfolio de Diego Pérez Fonterosa: administración de sistemas y ciberseguridad. Laboratorio SOC con Wazuh, TheHive y Cortex, honeypot Cowrie con MITRE ATT&CK, pipeline DevSecOps y auditoría de Active Directory.">
+    <meta name="keywords" content="ASIR, ciberseguridad, SOC, NOC, soporte IT, Wazuh, TheHive, honeypot, Active Directory, Vigo, Pontevedra">
+    <meta property="og:title" content="Diego Pérez Fonterosa · Sistemas y Ciberseguridad">
+    <meta property="og:description" content="Laboratorio SOC, honeypot con MITRE ATT&CK, DevSecOps y administración de sistemas. Disponible desde diciembre de 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfoliodiegofonterosa.netlify.app/">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+
+    <title>Diego Pérez Fonterosa · Sistemas y Ciberseguridad</title>
+    <link rel="preload" href="css/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
     <header class="header">
-        <nav class="nav-container">
-            <div class="hamburguer" id="hamburguer" role="button" aria-label="Menú" aria-expanded="false" tabindex="0">
+        <nav class="nav-container" aria-label="Navegación principal">
+            <a href="#home" class="nav-logo">diego<span>@</span>fonterosa</a>
+            <button class="hamburguer" id="hamburguer" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            <ul class="nav-menu" id="nav-menu" role="menu">
-                <li role="none"><a role="menuitem" href="#home">Inicio</a></li>
-                <li role="none"><a role="menuitem" href="#about">Sobre mí</a></li>
-                <li role="none"><a role="menuitem" href="#projects">Proyectos</a></li>
-                <li role="none"><a role="menuitem" href="#certifications">Certificaciones</a></li>
-                <li role="none"><a role="menuitem" href="#resume">Currículum</a></li>
-                <li role="none"><a role="menuitem" href="#contact">Contacto</a></li>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#resume">Experiencia</a></li>
+                <li><a href="#education">Formación</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
+    <main id="main">
+
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="availability-badge" aria-label="Estado de disponibilidad">
+            <div class="availability-badge">
                 <span class="availability-dot" aria-hidden="true"></span>
-                <span>Disponible para prácticas</span>
+                <span>Disponible desde el 16 de diciembre de 2026</span>
             </div>
             <h1>Diego Pérez Fonterosa</h1>
-            <p class="hero-subtitle">Técnico en Sistemas de Telecomunicaciones e Informáticos (STI) | Estudiante de Administración de Sistemas Informáticos en Red (ASIR)</p>
-            <p class="hero-description">Linux Hardening | Vulnerability Assessment | Cloud Security (Azure) | Incident Response</p>
+            <p class="hero-subtitle">Administración de sistemas y ciberseguridad · SOC · NOC · Soporte IT</p>
+            <p class="hero-description">16 años en monitorización 24/7 de una central receptora de alarmas. Ahora llevo esa experiencia a la seguridad informática: laboratorio SOC propio, honeypot en producción y auditoría de Active Directory en empresa real.</p>
+            <ul class="hero-tags" aria-label="Tecnologías principales">
+                <li>Wazuh</li>
+                <li>TheHive + Cortex</li>
+                <li>Cowrie</li>
+                <li>MITRE ATT&amp;CK</li>
+                <li>Active Directory</li>
+                <li>Linux</li>
+            </ul>
             <div class="hero-cta">
-                <a href="#projects" class="btn">Ver proyectos técnicos</a>
-                <a href="#certifications" class="btn btn-secondary">Certificaciones</a>
+                <a href="#projects" class="btn">Ver proyectos</a>
+                <a href="#contact" class="btn btn-secondary">Contactar</a>
             </div>
         </div>
     </section>
@@ -52,292 +68,332 @@
         <div class="container">
             <h2 class="section-title">Sobre mí</h2>
             <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=600&auto=format&fit=crop&q=60" alt="Workspace tecnológico" loading="lazy">
+                <div class="terminal" aria-label="Resumen del perfil">
+                    <div class="terminal-bar"><span></span><span></span><span></span></div>
+                    <pre class="terminal-body"><span class="prompt">$</span> whoami
+Diego Pérez Fonterosa
+<span class="prompt">$</span> cat perfil.txt
+ubicación   : Tui (Pontevedra)
+modalidad   : remoto o zona Vigo
+movilidad   : carné B y vehículo propio
+formación   : ASIR + Máster Ciberseguridad
+experiencia : 16 años CRA 24/7
+<span class="prompt">$</span> systemctl status disponibilidad
+● <span class="ok">active</span> desde 16/12/2026</pre>
                 </div>
                 <div class="about-text">
-                    <h3>Diego Pérez Fonterosa</h3>
-                    <p class="about-subtitle">Técnico en Sistemas de Telecomunicaciones e Informáticos (STI) | Estudiante de Administración de Sistemas Informáticos en Red (ASIR)</p>
                     <p>
-                        <strong>Técnico Superior en Sistemas de Telecomunicaciones e Informáticos (STI)</strong> (2007) con experiencia operativa en monitoreo y gestión de sistemas. Actualmente cursando <strong>Administración de Sistemas Informáticos en Red (ASIR)</strong> y <strong>Máster en Ciberseguridad</strong> en <strong>Prometeo by thePower</strong>, con especialización en hardening de infraestructuras, análisis de vulnerabilidades y respuesta a incidentes.
+                        Durante 16 años trabajé como <strong>operador técnico en una central receptora de alarmas</strong> (Segursystem Europa): monitorización 24/7, gestión de incidencias en tiempo real, soporte técnico a clientes e instaladores y coordinación con las fuerzas de seguridad. Es decir, el día a día de un centro de operaciones, con presión y turnos.
                     </p>
                     <p>
-                        Experiencia práctica en administración de sistemas Linux/Windows, configuración de redes y monitoreo 24/7 (Segursystem Europa, 2009-2025). Profundo conocimiento en seguridad operacional, implementación de controles y automatización de tareas críticas.
+                        Ahora termino el <strong>Ciclo Superior de ASIR</strong> (nota media 9,06) y el <strong>Máster en Ciberseguridad</strong>, y hago las prácticas como técnico de sistemas en una empresa de Vigo, donde audito el Active Directory, documento la infraestructura y doy soporte a usuarios.
                     </p>
                     <p>
-                        Comprometido con formación continua en seguridad ofensiva y defensiva. Interesado en cloud security (Azure), incident response y auditoría de seguridad. Resolutivo, orientado a la precisión técnica y proactivo en la mejora de postura de seguridad.
+                        Fuera del horario mantengo un <strong>laboratorio propio</strong>: SIEM con Wazuh, orquestación con n8n, TheHive y Cortex, un honeypot expuesto a Internet y un entorno de pentest con Kali. Busco un puesto de <strong>SOC N1, NOC, monitorización o soporte N1/N2</strong>.
                     </p>
-                    
-                    <h3 style="margin-top: 30px; margin-bottom: 20px; color: #00ff41; font-size: 1.3rem;">Competencias Técnicas</h3>
-                    
-                    <div class="skills-container">
-                        <div class="skill-category">
-                            <h3>Administración de Sistemas</h3>
-                            <ul>
-                                <li>Linux (Debian/Ubuntu, systemd, user management)</li>
-                                <li>Windows Server (Group Policy, Active Directory)</li>
-                                <li>Virtualización (Proxmox, KVM)</li>
-                                <li>Package management (apt, yum)</li>
-                            </ul>
-                        </div>
+                </div>
+            </div>
 
-                        <div class="skill-category">
-                            <h3>Networking & Infraestructura</h3>
-                            <ul>
-                                <li>TCP/IP y protocolos de red</li>
-                                <li>Configuración DNS/DHCP/NTP</li>
-                                <li>Firewall (iptables, ufw, netfilter)</li>
-                                <li>Monitoreo de red (Wireshark, tcpdump)</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category">
-                            <h3>Ciberseguridad & Hardening</h3>
-                            <ul>
-                                <li>System hardening y CIS benchmarks</li>
-                                <li>Análisis de vulnerabilidades</li>
-                                <li>Log analysis & SIEM basics</li>
-                                <li>Incident response fundamentals</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category">
-                            <h3>Desarrollo & Scripting</h3>
-                            <ul>
-                                <li>Python (OOP, automatización, análisis)</li>
-                                <li>Bash/PowerShell scripting</li>
-                                <li>HTML5 & CSS3</li>
-                                <li>JavaScript y DOM manipulation</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category">
-                            <h3>Cloud & DevOps</h3>
-                            <ul>
-                                <li>Azure Fundamentals</li>
-                                <li>Infrastructure-as-Code basics</li>
-                                <li>Docker & containerización</li>
-                                <li>CI/CD concepts</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category">
-                            <h3>Herramientas & Plataformas</h3>
-                            <ul>
-                                <li>Git & GitHub</li>
-                                <li>SSH & remote access</li>
-                                <li>SQL basics (queries, database design)</li>
-                                <li>JSON & file formats</li>
-                            </ul>
-                        </div>
-                    </div>
+            <h3 class="subsection-title">Competencias técnicas</h3>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Monitorización y SOC</h4>
+                    <ul>
+                        <li>Wazuh (agentes, reglas personalizadas)</li>
+                        <li>TheHive + Cortex (AbuseIPDB)</li>
+                        <li>n8n para automatizar respuestas</li>
+                        <li>Análisis de logs y mapeo a MITRE ATT&amp;CK</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Seguridad ofensiva y vulnerabilidades</h4>
+                    <ul>
+                        <li>Nmap, OpenVAS/GVM, Nuclei</li>
+                        <li>Metasploit y explotación web (DVWA)</li>
+                        <li>OWASP ZAP, Semgrep, Trivy, Gitleaks</li>
+                        <li>Gophish (simulación de phishing)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Sistemas</h4>
+                    <ul>
+                        <li>Windows Server y Active Directory</li>
+                        <li>Linux (Ubuntu Server, Debian, Kali)</li>
+                        <li>Microsoft 365 y OneDrive</li>
+                        <li>VirtualBox y Docker</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Redes</h4>
+                    <ul>
+                        <li>TCP/IP, DNS y DHCP</li>
+                        <li>Pi-hole + Unbound en Raspberry Pi</li>
+                        <li>Firewall con iptables y UFW</li>
+                        <li>VPN (auditoría de Cisco RV340)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Hardening y gobierno</h4>
+                    <ul>
+                        <li>Hardening de Apache, PHP y SSH (MFA)</li>
+                        <li>Respuesta a incidentes (NIST)</li>
+                        <li>Análisis de riesgos con MAGERIT</li>
+                        <li>Documentación técnica y procedimientos</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Scripting y desarrollo</h4>
+                    <ul>
+                        <li>Python (automatización y análisis de logs)</li>
+                        <li>Bash y PowerShell</li>
+                        <li>Node.js + Express + MongoDB</li>
+                        <li>SQL Server, PostgreSQL y Git</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Proyectos destacados</h2>
-            <p class="section-subtitle">Desarrollos reales enfocados en administración de sistemas y programación</p>
-            
+            <p class="section-subtitle">Trabajo práctico de seguridad, desplegado y documentado por mí</p>
+
             <div class="projects-grid">
-                
-                <!-- PROYECTO 1: Cuestionario ASIR -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=60" alt="Sistema de Cuestionarios ASIR" loading="lazy">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Quiz Platform ASIR - Evaluación Automática</h3>
-                        <p class="project-description">
-                            Plataforma interactiva CLI en Python para evaluación de conocimientos técnicos en Administración de Sistemas. Sistema de ranking persistente con validación de entrada robusta, almacenamiento JSON y feedback inmediato. Diseñado bajo principios de seguridad en inputs.
-                        </p>
-                        <div class="project-features">
-                            <ul>
-                                <li>✓ 9 preguntas en 3 categorías: Informática, Redes, Seguridad</li>
-                                <li>✓ Ranking top 10 persistente (JSON) con timestamps</li>
-                                <li>✓ Validación de entrada contra inyección</li>
-                                <li>✓ Arquitectura OOP modular</li>
-                            </ul>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python 3.10+</span>
-                            <span class="tech-tag">OOP</span>
-                            <span class="tech-tag">JSON</span>
-                            <span class="tech-tag">Input Validation</span>
-                        </div>
-                        <a href="https://github.com/diegofonterosa/Proyecto_MPO" class="btn" target="_blank" rel="noopener noreferrer">Ver código</a>
-                    </div>
-                </div>
 
-                <!-- PROYECTO 2: Gestor de Archivos Seguro -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop&q=60" alt="Gestor de Archivos CLI" loading="lazy">
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-cmd">$ tail -f cowrie.json</span>
+                        <span class="project-label">Proyecto final ASIR</span>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">File System Utility - Automatización Segura</h3>
+                        <h3 class="project-title">Honeypot SSH con inteligencia de amenazas MITRE ATT&amp;CK</h3>
                         <p class="project-description">
-                            Herramienta avanzada de línea de comandos para administración de archivos y directorios con enfoque en seguridad. Operaciones CRUD completas con validaciones de permisos, confirmaciones antes de operaciones destructivas y visualización de metadatos del sistema.
+                            Despliegue de un honeypot Cowrie expuesto a Internet en un VPS de Hetzner para capturar ataques reales durante cuatro semanas y convertirlos en un informe de inteligencia de amenazas.
                         </p>
-                        <div class="project-features">
-                            <ul>
-                                <li>✓ 7 operaciones CRUD con confirmación de seguridad</li>
-                                <li>✓ Validación de permisos y rutas</li>
-                                <li>✓ Metadatos de sistema (propietario, permisos, timestamps)</li>
-                                <li>✓ Manejo robusto de excepciones y errores</li>
-                            </ul>
-                        </div>
+                        <ul class="project-features">
+                            <li>Cowrie escuchando en el puerto 22 (SSH) de un servidor dedicado</li>
+                            <li>Firewall con iptables en el servidor</li>
+                            <li>Script propio en Python (<code>cowrie_analyzer.py</code>) para analizar los logs</li>
+                            <li>Técnicas observadas mapeadas a MITRE ATT&amp;CK en un informe de inteligencia</li>
+                        </ul>
                         <div class="project-tech">
-                            <span class="tech-tag">Python 3.10+</span>
-                            <span class="tech-tag">OS Module</span>
-                            <span class="tech-tag">File Permissions</span>
-                            <span class="tech-tag">Exception Handling</span>
+                            <span class="tech-tag">Cowrie</span>
+                            <span class="tech-tag">Hetzner Cloud</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MITRE ATT&amp;CK</span>
+                            <span class="tech-tag">iptables</span>
                         </div>
-                        <a href="https://github.com/diegofonterosa/Proyecto2_python" class="btn" target="_blank" rel="noopener noreferrer">Ver código</a>
+                        <p class="project-note">Defensa en diciembre de 2026</p>
                     </div>
-                </div>
+                </article>
 
-                <!-- PROYECTO 3: Udemy Free Course Bot -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=60" alt="Udemy Bot Automation" loading="lazy">
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-cmd">$ wazuh → n8n → thehive</span>
+                        <span class="project-label">Laboratorio SOC</span>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Udemy Free Courses Automation Bot</h3>
+                        <h3 class="project-title">Pipeline SOAR: Wazuh, Cortex y TheHive</h3>
                         <p class="project-description">
-                            Bot en Python para automatizar la búsqueda y recopilación de cursos gratuitos en Udemy. Utiliza web scraping, APIs y automatización para facilitar el descubrimiento de contenido educativo de calidad. Proyecto de aprendizaje en automatización y data collection.
+                            Laboratorio SOC en Ubuntu Server que automatiza el ciclo de una alerta: detección, enriquecimiento de la IP y apertura del caso para su investigación.
                         </p>
-                        <div class="project-features">
-                            <ul>
-                                <li>✓ Web scraping y data extraction</li>
-                                <li>✓ Filtrado de cursos gratuitos</li>
-                                <li>✓ Automatización de búsquedas</li>
-                                <li>✓ Exportación de resultados</li>
-                            </ul>
-                        </div>
+                        <ul class="project-features">
+                            <li>Wazuh como SIEM con agentes en varias máquinas</li>
+                            <li>Flujo en n8n que recibe la alerta y la reenvía</li>
+                            <li>Cortex consulta la reputación de la IP en AbuseIPDB</li>
+                            <li>Alta automática del caso en TheHive</li>
+                        </ul>
                         <div class="project-tech">
-                            <span class="tech-tag">Python 3</span>
-                            <span class="tech-tag">Web Scraping</span>
-                            <span class="tech-tag">Automation</span>
-                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Wazuh</span>
+                            <span class="tech-tag">n8n</span>
+                            <span class="tech-tag">Cortex</span>
+                            <span class="tech-tag">TheHive</span>
+                            <span class="tech-tag">Docker</span>
                         </div>
-                        <a href="https://github.com/diegofonterosa/udemy-free-course-bot" class="btn" target="_blank" rel="noopener noreferrer">Ver código</a>
                     </div>
-                </div>
-                
+                </article>
+
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-cmd">$ git push → 5 stages</span>
+                        <span class="project-label">DevSecOps</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pipeline DevSecOps sobre DVWA</h3>
+                        <p class="project-description">
+                            Pipeline en GitHub Actions que analiza una aplicación vulnerable en cinco fases y detecta fallos de código, dependencias, secretos e imagen antes del despliegue.
+                        </p>
+                        <ul class="project-features">
+                            <li>SAST con Semgrep y SCA con Trivy</li>
+                            <li>Detección de secretos con Gitleaks</li>
+                            <li>Escaneo de la imagen Docker con Trivy y DAST con OWASP ZAP</li>
+                            <li>Corrección de SQLi, XSS e inyección de comandos</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag">Semgrep</span>
+                            <span class="tech-tag">Trivy</span>
+                            <span class="tech-tag">Gitleaks</span>
+                            <span class="tech-tag">OWASP ZAP</span>
+                        </div>
+                        <a href="https://github.com/diegofonterosa/dvwa-devsecops-pipeline" class="btn" target="_blank" rel="noopener noreferrer">Ver código</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-cmd">$ curl /api/alertas</span>
+                        <span class="project-label">Desarrollo seguro</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Security Alert Monitor (mini-SIEM)</h3>
+                        <p class="project-description">
+                            Panel de alertas de seguridad inspirado en mi trabajo en la CRA: recibe, guarda, filtra y muestra eventos a través de una API REST y un dashboard web.
+                        </p>
+                        <ul class="project-features">
+                            <li>API REST con Node.js, Express y MongoDB</li>
+                            <li>Autenticación JWT, Helmet, CORS y rate limiting</li>
+                            <li>Vulnerabilidades corregidas tras el análisis con SonarCloud (NoSQL injection, XSS y mass assignment)</li>
+                            <li>Dashboard en HTML, CSS y JavaScript sin frameworks</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">SonarCloud</span>
+                        </div>
+                        <a href="https://github.com/diegofonterosa/security-alert-monitor" class="btn" target="_blank" rel="noopener noreferrer">Ver código</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-cmd">$ msfconsole -q</span>
+                        <span class="project-label">TFG del Máster</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pentest, defensa y gobierno en un laboratorio propio</h3>
+                        <p class="project-description">
+                            Proyecto completo del Máster sobre un laboratorio de máquinas virtuales: atacar, corregir, detectar y documentar, de principio a fin.
+                        </p>
+                        <ul class="project-features">
+                            <li>Reconocimiento, OpenVAS y explotación (backdoor de vsftpd y SQLi en DVWA)</li>
+                            <li>Hardening: MFA en SSH, cabeceras HTTP y firewall</li>
+                            <li>Reglas personalizadas en Wazuh y playbook de respuesta NIST</li>
+                            <li>Análisis de riesgos MAGERIT y Plan Director de Seguridad</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kali Linux</span>
+                            <span class="tech-tag">Metasploit</span>
+                            <span class="tech-tag">OpenVAS</span>
+                            <span class="tech-tag">Wazuh</span>
+                            <span class="tech-tag">MAGERIT</span>
+                        </div>
+                    </div>
+                </article>
+
             </div>
-            
-            <!-- Llamada a la acción -->
+
+            <h3 class="subsection-title">Otros proyectos</h3>
+            <ul class="mini-projects">
+                <li>
+                    <a href="https://github.com/diegofonterosa/Proyecto_MPO" target="_blank" rel="noopener noreferrer">Quiz ASIR</a>
+                    <span>Cuestionario CLI en Python con ranking persistente en JSON.</span>
+                </li>
+                <li>
+                    <a href="https://github.com/diegofonterosa/Proyecto2_python" target="_blank" rel="noopener noreferrer">Gestor de archivos CLI</a>
+                    <span>Operaciones sobre archivos con validaciones y metadatos del sistema.</span>
+                </li>
+                <li>
+                    <a href="https://github.com/diegofonterosa/udemy-free-course-bot" target="_blank" rel="noopener noreferrer">Udemy Free Course Bot</a>
+                    <span>Automatización en Python para localizar cursos gratuitos.</span>
+                </li>
+            </ul>
+
             <div class="projects-cta">
-                <p>¿Quieres ver más proyectos?</p>
-                <a href="https://github.com/diegofonterosa" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Visitar mi GitHub</a>
+                <a href="https://github.com/diegofonterosa" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Ver todo en GitHub</a>
             </div>
         </div>
     </section>
 
-    <section id="certifications" class="section">
+    <section id="resume" class="section">
         <div class="container">
-            <h2 class="section-title">Certificaciones & Formación Continua</h2>
-            <p class="section-subtitle">Formación académica y certificaciones en progreso</p>
-            
+            <h2 class="section-title">Experiencia</h2>
+            <div class="timeline">
+                <div class="resume-item">
+                    <div class="resume-head">
+                        <h3>Técnico de sistemas (prácticas FCT)</h3>
+                        <span class="date">sept. 2026 – dic. 2026</span>
+                    </div>
+                    <div class="company">Empresa en Vigo</div>
+                    <ul>
+                        <li>Auditoría y saneamiento del Active Directory: equipos duplicados, grupos y métodos de autenticación</li>
+                        <li>Auditoría y documentación de las VPN de la empresa (Cisco RV340)</li>
+                        <li>Puesta en marcha de un sistema de tickets de IT (Helpdesk en Odoo)</li>
+                        <li>Soporte a usuarios: Microsoft 365, OneDrive, equipos, impresoras y copias de seguridad</li>
+                        <li>Inventario de equipos, mapeado de red y documentación de procedimientos</li>
+                        <li>Restauración de una base de datos en SQL Server para un proyecto de inventario</li>
+                        <li>Mantenimiento de una web corporativa en WordPress</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <div class="resume-head">
+                        <h3>Operador técnico de central receptora de alarmas</h3>
+                        <span class="date">2009 – 2025</span>
+                    </div>
+                    <div class="company">Segursystem Europa, S.L.U. · O Porriño</div>
+                    <ul>
+                        <li>Monitorización 24/7 y gestión de alarmas e incidencias en tiempo real</li>
+                        <li>Soporte técnico a clientes e instaladores</li>
+                        <li>Programación y gestión del software SBN</li>
+                        <li>Videoverificación y coordinación con las fuerzas de seguridad</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item resume-item-compact">
+                    <div class="resume-head">
+                        <h3>Experiencia anterior</h3>
+                        <span class="date">2002 – 2008</span>
+                    </div>
+                    <p>Operario de producción en Kingspan Insulation (2008) y reponedor con atención al cliente en Gadis (2002–2004).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Formación</h2>
             <div class="certifications-grid">
                 <div class="cert-card">
                     <h3>Técnico Superior en ASIR</h3>
-                    <div class="provider">Prometeo by thePower</div>
-                    <div class="status in-progress">En curso - Finalización 2026</div>
-                    <p style="margin-top: 15px; color: #b0b0b0; font-size: 0.95rem;">Administración de Sistemas Linux/Windows, redes, virtualización y seguridad informática. Formación impartida por <strong>Prometeo by thePower</strong>.</p>
+                    <div class="provider">Prometeo FP by thePower</div>
+                    <div class="status in-progress">Finalización en diciembre de 2026</div>
+                    <p>Nota media de 9,06. Administración de sistemas Linux y Windows, redes, servicios, bases de datos y seguridad. Proyecto final: honeypot con MITRE ATT&amp;CK.</p>
                 </div>
-
                 <div class="cert-card">
                     <h3>Máster en Ciberseguridad</h3>
                     <div class="provider">Prometeo by thePower</div>
-                    <div class="status in-progress">En curso - Finalización 2026</div>
-                    <p style="margin-top: 15px; color: #b0b0b0; font-size: 0.95rem;">Seguridad de redes, análisis de vulnerabilidades, respuesta a incidentes y hardening de infraestructuras. Formación impartida por <strong>Prometeo by thePower</strong>.</p>
+                    <div class="status in-progress">Finalización en diciembre de 2026</div>
+                    <p>Seguridad ofensiva, desarrollo seguro, protección, SOC y respuesta a incidentes, y gobierno de la seguridad.</p>
                 </div>
-
                 <div class="cert-card">
-                    <h3>Azure Administrator (AZ-104)</h3>
-                    <div class="provider">Microsoft Certified</div>
-                    <div class="status planned">Planificado 2026</div>
-                    <p style="margin-top: 15px; color: #b0b0b0; font-size: 0.95rem;">Administración de infraestructura Azure, gestión de recursos y redes en cloud.</p>
+                    <h3>Técnico Superior en Sistemas de Telecomunicaciones e Informáticos</h3>
+                    <div class="provider">IES Ribeira do Louro</div>
+                    <div class="status done">2007</div>
+                    <p>Diseño, instalación y mantenimiento de redes, sistemas de telecomunicaciones e infraestructuras.</p>
                 </div>
-
                 <div class="cert-card">
-                    <h3>CCNA (Cisco Certified Network Associate)</h3>
-                    <div class="provider">Cisco Certification</div>
-                    <div class="status planned">Planificado 2026-2027</div>
-                    <p style="margin-top: 15px; color: #b0b0b0; font-size: 0.95rem;">Fundamentos de redes, routing, switching y protocolos empresariales.</p>
+                    <h3>Próximo objetivo</h3>
+                    <div class="provider">Microsoft</div>
+                    <div class="status planned">Azure Administrator (AZ-104)</div>
+                    <p>Certificación prevista tras terminar las prácticas y los proyectos finales.</p>
                 </div>
             </div>
         </div>
-    </section>
-        <div class="container">
-            <h2 class="section-title">Currículum</h2>
-            <div class="resume-content">
-                <div class="resume-section">
-                    <h3>Experiencia Profesional</h3>
-                    <div class="resume-item">
-                        <h4>Operador de Soporte Técnico CRA</h4>
-                        <div class="company">Segursystem Europa, S.L.U.</div>
-                        <div class="date">2009-2025</div>
-                        <ul>
-                            <li>Gestión y tratamiento de alarmas en tiempo real</li>
-                            <li>Atención y soporte técnico especializado a clientes y técnicos</li>
-                            <li>Programación y gestión del software SBN</li>
-                            <li>Video verificación y coordinación con fuerzas de seguridad</li>
-                            <li>Monitorización de sistemas de seguridad 24/7</li>
-                        </ul>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Operario en Línea de Producción</h4>
-                        <div class="company">Kingspan Insulation S.A.</div>
-                        <div class="date">2008</div>
-                        <ul>
-                            <li>Trabajo en cadena de producción industrial</li>
-                            <li>Control de calidad de productos</li>
-                        </ul>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Reponedor y Atención al Cliente</h4>
-                        <div class="company">Supermercado Gadis (Gadisa)</div>
-                        <div class="date">2002-2004</div>
-                        <ul>
-                            <li>Reposición de productos y organización de estanterías</li>
-                            <li>Atención al cliente y asesoramiento en productos</li>
-                        </ul>
-                    </div>
-                </div>
-            
-                <div class="resume-section">
-                    <h3>Formación Académica</h3>
-                    <div class="resume-item">
-                        <h4>Técnico Superior en Administración de Sistemas Informáticos en Red (ASIR)</h4>
-                        <div class="company">En curso - Finalización prevista 2026</div>
-                        <p>Especialización en administración de sistemas Windows/Linux, redes, seguridad informática y virtualización.</p>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Máster en Ciberseguridad</h4>
-                        <div class="company">En curso - Finalización prevista 2026</div>
-                        <p>Formación avanzada en seguridad de redes, análisis de vulnerabilidades y protección de infraestructuras.</p>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Técnico Superior en Sistemas de Telecomunicaciones e Informáticos</h4>
-                        <div class="company">IES Ribeira do Louro</div>
-                        <div class="date">2007</div>
-                        <p>Competencia para diseñar, implantar y mantener redes, sistemas domóticos e infraestructuras audiovisuales.</p>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Bachillerato en Humanidades y Ciencias Sociales</h4>
-                        <div class="company">IES San Paio</div>
-                        <div class="date">2005</div>
-                        <p>Sólida base humanística y socio-económica con habilidades de análisis y comunicación.</p>
-                    </div>
-                </div>
-        </div>
-    </section>
-
     </section>
 
     <section id="contact" class="section">
@@ -345,11 +401,10 @@
             <h2 class="section-title">Contacto</h2>
             <div class="contact-content">
                 <div class="contact-form">
-                    <h3>Contáctame</h3>
-                    <p class="contact-intro">Me encantaría saber de ti. Si estás buscando perfil para prácticas, completa este formulario y te respondo lo antes posible.</p>
-                    <form id="contactForm" class="contact-form-fields" name="contact" method="POST" action="/" data-success-url="/success.html" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+                    <h3>Escríbeme</h3>
+                    <p class="contact-intro">Si tienes una vacante de SOC, NOC, monitorización o soporte IT, o quieres saber más de algún proyecto, te respondo lo antes posible.</p>
+                    <form id="contactForm" class="contact-form-fields" name="contact" method="POST" action="/success.html" data-success-url="/success.html" data-netlify="true" data-netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="contact">
-                        <input type="hidden" name="redirect" value="/success.html">
                         <p hidden>
                             <label>No rellenar: <input name="bot-field"></label>
                         </p>
@@ -368,58 +423,55 @@
                         <button type="submit" class="btn">Enviar mensaje</button>
                         <p id="contactStatus" class="contact-status" aria-live="polite"></p>
                     </form>
+                    <p class="form-legal">Los datos del formulario solo se usan para responderte. Más información en la <a href="privacy.html">política de privacidad</a>.</p>
                 </div>
-            
 
                 <div class="contact-info">
-                    <h3>Información del contacto</h3>
+                    <h3>Datos de contacto</h3>
                     <div class="contact-item">
-                        <strong>Email:</strong> diegofonterosa@gmail.com
+                        <strong>Email</strong>
+                        <a href="mailto:diegofonterosa@gmail.com">diegofonterosa@gmail.com</a>
                     </div>
                     <div class="contact-item">
-                        <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/diegoperezfonterosa" target="_blank" style="color: #00ff41;">linkedin.com/in/diegoperezfonterosa</a>
+                        <strong>LinkedIn</strong>
+                        <a href="https://www.linkedin.com/in/diegofonterosa" target="_blank" rel="noopener noreferrer">linkedin.com/in/diegofonterosa</a>
                     </div>
                     <div class="contact-item">
-                        <strong>GitHub:</strong> <a href="https://github.com/diegofonterosa" target="_blank" style="color: #00ff41;">github.com/diegofonterosa</a>
+                        <strong>GitHub</strong>
+                        <a href="https://github.com/diegofonterosa" target="_blank" rel="noopener noreferrer">github.com/diegofonterosa</a>
                     </div>
                     <div class="contact-item">
-                        <strong>Instagram:</strong> <a href="https://instagram.com/diegofonterosa" target="_blank" style="color: #00ff41;">@diegofonterosa</a>
+                        <strong>Ubicación</strong>
+                        <span>Tui (Pontevedra) · remoto o zona Vigo</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Disponibilidad</strong>
+                        <span>Desde el 16 de diciembre de 2026</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    </main>
+
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Diego Pérez Fonterosa | Técnico en Sistemas de Telecomunicaciones e Informáticos (STI) | Estudiante de Administración de Sistemas Informáticos en Red (ASIR)</p>
-            <p>Especializado en Linux, Ciberseguridad e Infraestructura | <a href="privacy.html" style="color: #00ff41">Política de Privacidad</a></p>
             <div class="social-links">
-                <a href="https://linkedin.com/in/diegoperezfonterosa" target="_blank" class="linkedin" title="LinkedIn" aria-label="LinkedIn">
-                    <span class="sr-only">LinkedIn</span>
-                    <i class="fab fa-linkedin-in"></i>
+                <a href="https://www.linkedin.com/in/diegofonterosa" target="_blank" rel="noopener noreferrer" class="linkedin" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
                 </a>
-                <a href="https://github.com/diegofonterosa" target="_blank" class="github" title="GitHub" aria-label="GitHub">
-                    <span class="sr-only">GitHub</span>
-                    <i class="fab fa-github"></i>
+                <a href="https://github.com/diegofonterosa" target="_blank" rel="noopener noreferrer" class="github" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
                 </a>
-                <a href="https://instagram.com/diegofonterosa" target="_blank" class="instagram" title="Instagram" aria-label="Instagram">
-                    <span class="sr-only">Instagram</span>
-                    <i class="fab fa-instagram"></i>
+                <a href="mailto:diegofonterosa@gmail.com" class="email" aria-label="Email">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.4l10 6.2 10-6.2V6H2zm20 2.8-9.5 5.9a1 1 0 0 1-1 0L2 8.8V18h20V8.8z"/></svg>
                 </a>
             </div>
+            <p>&copy; 2026 Diego Pérez Fonterosa · Sistemas y ciberseguridad</p>
+            <p class="footer-links"><a href="privacy.html">Política de privacidad</a> · <a href="cookies.html">Cookies</a></p>
         </div>
     </footer>
-
-    <div class="cookie-popup" id="cookiePopup">
-        <div class="cookie-text">
-            <p>Este portfolio utiliza cookies propias y de terceros para mejorar la experiencia de navegación, realizar análisis estadísticos de visitas y mostrar contenido relevante. Al hacer clic en 'Aceptar', consientes el uso de todas las cookies. Puedes 'Rechazar' las cookies no esenciales en cualquier momento. Para más información, consulta nuestra Política de Cookies completa.<a href="cookies.html">Saber más</a></p>
-        </div>
-        <div class="cookie-buttons">
-                <button id="acceptCookies" class="btn">Aceptar</button>
-                <button id="rejectCookies" class="btn btn-secondary">Rechazar</button>
-            </div>
-    </div>
 
     <script src="js/javascript.js" defer></script>
 </body>
